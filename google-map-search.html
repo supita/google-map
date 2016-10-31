@@ -191,6 +191,9 @@ information on the API.
     },
 
     _gotResults: function(results, status) {
+      if (!Array.isArray ()) {
+        results = [];
+      }
       this.results = results.map(function(result) {
         // obtain lat/long from geometry
         result.latitude  = result.geometry.location.lat();
